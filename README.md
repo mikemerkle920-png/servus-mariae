@@ -1,12 +1,8 @@
-# Totus Tuus v10.3 - GitHub Pages deployment
+Totus Tuus v10.4 — GitHub Pages icon path fix
 
-This update fixes missing PWA installation wiring in index.html.
-
-1. In the existing GitHub repository, replace `index.html`, `manifest.webmanifest`, and `sw.js` with the files from this ZIP. Keep the `icons/` folder and its files at the same level as `index.html`. (Alternatively, upload all ZIP contents to the repository root.)
-2. GitHub Settings > Pages: Deploy from branch `main`, folder `/(root)`.
-3. After deployment, open the published HTTPS URL. The manifest is at `https://YOUR-USERNAME.github.io/totustuus/manifest.webmanifest` and service worker at `/totustuus/sw.js`.
-4. Android Chrome: menu > Add to Home screen / Install app. Brave may handle PWA installation differently; test Chrome first.
-5. If an older copy remains, reload the site and clear its site data or remove any old home-screen shortcut, then retry.
-6. Open the installed app, load it once while online, then test offline.
-
-Standalone HTML is a separate file and does not install as a PWA when opened locally.
+Upload all six files in this ZIP to the ROOT of the GitHub repository (alongside index.html).
+The two icons are now in the repository root, not inside an icons folder.
+Replace index.html, manifest.webmanifest, and sw.js with these versions; add icon-192.png and icon-512.png.
+After GitHub Pages deploys, check https://mikemerkle920-png.github.io/totustuus/icon-192.png and /icon-512.png.
+Then open the app in Chrome and use Install app / Add to Home screen.
+Existing local journal/progress data is preserved as long as the site URL remains the same.

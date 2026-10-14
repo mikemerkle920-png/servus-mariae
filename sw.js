@@ -1,6 +1,6 @@
-/* Totus Tuus v10.3: offline app-shell cache. All devotional texts are embedded in index.html. */
-const CACHE = 'totus-tuus-v10-3';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
+/* Totus Tuus v10.4: offline app-shell cache. All devotional texts are embedded in index.html. */
+const CACHE = 'totus-tuus-v10-4';
+const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
