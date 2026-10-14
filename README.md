@@ -17,3 +17,6 @@ Version 10.10: Accessible in-app feast-change confirmation dialog; replaces brow
 
 
 v10.12: Corrected Day 4 opening sentences to William Benham translation, Book III, Chapter VII, paragraph 4. No other reading changed.
+
+
+v10.13: Network-first HTML navigation with offline fallback. Avoids stale root/index cache copies. Does not clear journal or progress.
