@@ -11,18 +11,6 @@
   .app>footer{position:static;min-height:0;display:block;padding:15px;color:var(--muted);background:transparent;box-shadow:none}
   body::after{content:"";display:block;height:calc(30px + env(safe-area-inset-bottom, 0px));background:#173c58}
 }
-
-/* Accessible, branded confirmation replaces browser-origin confirm(). */
-.tt-dialog-backdrop{position:fixed;inset:0;z-index:10000;background:rgba(15,30,40,.68);display:flex;align-items:center;justify-content:center;padding:20px}
-.tt-dialog-backdrop[hidden]{display:none!important}
-.tt-dialog{width:min(100%,430px);max-height:calc(100dvh - 40px);overflow:auto;background:var(--paper);color:var(--ink);border:2px solid var(--gold);border-radius:16px;padding:24px;box-shadow:0 14px 60px #0005;font-family:Georgia,'Times New Roman',serif}
-.tt-dialog h2{font-size:1.45rem;line-height:1.25;color:var(--navy);margin:0 0 14px}
-.tt-dialog p{font-size:1rem;line-height:1.6;margin:0 0 20px}
-.tt-dialog-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
-.tt-dialog-actions button{min-height:48px;padding:11px 20px;border-radius:8px;font:700 1rem system-ui,sans-serif;cursor:pointer}
-#tt-cancel-change{background:var(--paper);border:2px solid var(--navy);color:var(--navy)}
-#tt-confirm-change{background:var(--navy);border:2px solid var(--navy);color:white}
-.tt-dialog-actions button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 </style><link rel="manifest" href="./manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="./icon-192.png"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -417,37 +405,7 @@ const FEASTS=[['Presentation of the Blessed Virgin Mary',11,21],['Immaculate Con
 const $=id=>document.getElementById(id), today=new Date();today.setHours(12,0,0,0);const format=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});const iso=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');const parse=s=>{let [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d,12)};
 const upcoming=FEASTS.flatMap(([name,m,d])=>[today.getFullYear(),today.getFullYear()+1,today.getFullYear()+2].map(y=>{let end=new Date(y,m-1,d,12),start=new Date(y,m-1,d-33,12);return {name,start,end,id:name+'|'+iso(end)}})).filter(f=>f.end>=today).sort((a,b)=>a.start-b.start).slice(0,14);
 let saved;let storageAvailable=true;try{saved=JSON.parse(localStorage.getItem('tt-v01')||'{}');if(!saved||typeof saved!=='object'||Array.isArray(saved))saved={}}catch(e){saved={};storageAvailable=false}if(!saved.journals||typeof saved.journals!=='object'||Array.isArray(saved.journals))saved.journals={};if(!saved.consecrationChecks||typeof saved.consecrationChecks!=='object'||Array.isArray(saved.consecrationChecks))saved.consecrationChecks={};if(!Number.isInteger(saved.viewDay)||saved.viewDay<1||saved.viewDay>33)saved.viewDay=1;if(typeof saved.consecrationDate!=='string')saved.consecrationDate=null;let selected=upcoming.find(f=>f.id===saved.plan)||upcoming[0];let done=new Set((Array.isArray(saved.done)?saved.done:[]).filter(n=>Number.isInteger(n)&&n>=1&&n<=33));function persist(){if(!storageAvailable)return;try{localStorage.setItem('tt-v01',JSON.stringify({...saved,plan:saved.plan,done:[...done]}))}catch(e){storageAvailable=false;console.warn('Device storage unavailable; changes will last only for this session.')}}function go(id){document.querySelectorAll('.screen').forEach(e=>e.classList.toggle('active',e.id===id));document.querySelectorAll('.nav button').forEach(e=>e.classList.toggle('active',e.dataset.go===id));if(id==='journey')renderJourney();if(id==='daily')renderDaily();if(id==='consecration')renderConsecration();window.scrollTo({top:0,behavior:'smooth'})}document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
-function renderFeasts(){$('feast-list').innerHTML=upcoming.map(f=>`<button class="feast ${f.id===selected.id?'selected':''}" data-feast="${f.id}"><span><strong>${f.name}</strong><small>Begin ${format(f.start)}</small></span><span class="subtle">${format(f.end)} ${f.id===selected.id?'✓':''}</span></button>`).join('');document.querySelectorAll('[data-feast]').forEach(b=>b.onclick=()=>{selected=upcoming.find(f=>f.id===b.dataset.feast);renderFeasts()});$('start-date').textContent=format(selected.start);$('end-date').textContent=format(selected.end)}let feastChangeConfirmed=false;
-let feastDialogReturnFocus=null;
-function closeFeastConfirmation(){
-  const backdrop=$('tt-feast-confirm');
-  backdrop.hidden=true;
-  document.removeEventListener('keydown',feastDialogKeydown);
-  if(feastDialogReturnFocus&&feastDialogReturnFocus.isConnected)feastDialogReturnFocus.focus();
-}
-function feastDialogKeydown(event){
-  if(event.key==='Escape'){event.preventDefault();closeFeastConfirmation();return;}
-  if(event.key==='Tab'){
-    const cancel=$('tt-cancel-change'),proceed=$('tt-confirm-change');
-    if(event.shiftKey&&document.activeElement===cancel){event.preventDefault();proceed.focus();}
-    else if(!event.shiftKey&&document.activeElement===proceed){event.preventDefault();cancel.focus();}
-  }
-}
-function openFeastConfirmation(){
-  feastDialogReturnFocus=document.activeElement;
-  $('tt-feast-confirm').hidden=false;
-  $('tt-cancel-change').focus();
-  document.addEventListener('keydown',feastDialogKeydown);
-}
-$('tt-cancel-change').addEventListener('click',closeFeastConfirmation);
-$('tt-confirm-change').addEventListener('click',()=>{
-  closeFeastConfirmation();
-  feastChangeConfirmed=true;
-  $('save-plan').click();
-  feastChangeConfirmed=false;
-});
-$('tt-feast-confirm').addEventListener('click',event=>{if(event.target===$('tt-feast-confirm'))closeFeastConfirmation()});
-$('save-plan').onclick=()=>{if(saved.plan!==selected.id){const hasProgress=done.size>0||Object.values(saved.journals||{}).some(v=>typeof v==='string'&&v.trim())||!!saved.consecrationDate||Object.values(saved.consecrationChecks||{}).some(Boolean);if(hasProgress&&!feastChangeConfirmed){openFeastConfirmation();return;}feastChangeConfirmed=false;done.clear();saved.consecrationChecks={};saved.journals={};saved.journal='';saved.viewDay=1;saved.consecrationDate=null;$('journal').value=''}saved.plan=selected.id;persist();go('journey')};function renderJourney(){const f=upcoming.find(x=>x.id===saved.plan)||selected;let count=done.size;let next=Array.from({length:33},(_,i)=>i+1).find(n=>!done.has(n))||33;$('journey-feast').textContent=`${f.name} · ${format(f.end)}`;$('progress-title').textContent=`Day ${next} of 33`;$('progress-fill').style.width=(count/33*100)+'%';$('progress-sub').textContent=`${count} of 33 days completed`;$('day-grid').innerHTML=Array.from({length:33},(_,i)=>`<button class="day ${done.has(i+1)?'done':''} ${i+1===next?'current':''}" data-day="${i+1}" title="Day ${i+1}">${done.has(i+1)?'✓':i+1}</button>`).join('')+`<button class="day consecration-day" id="day-34" type="button" title="Consecration · ${format(f.end)}" aria-label="Day 34, Act of Consecration, ${format(f.end)}"><strong>34</strong><small>${f.end.toLocaleDateString('en-US',{month:'short',day:'numeric'})}</small></button>`;document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{saved.viewDay=Number(b.dataset.day);go('daily')});$('day-34').onclick=()=>go('consecration')}function renderConsecration(){const f=upcoming.find(x=>x.id===saved.plan)||selected;$('consecration-feast-label').textContent=f.name+' · '+format(f.end);$('consecration-date-heading').textContent='Consecration · '+format(f.end);$('actual-consecration-date').value=saved.consecrationDate||'';document.querySelectorAll('.consecration-check').forEach(el=>el.checked=!!(saved.consecrationChecks||{})[el.dataset.check]);$('consecration-confirmation').textContent=saved.consecrationDate?'Recorded: '+saved.consecrationDate:'';}$('back-to-day-33').onclick=()=>{saved.viewDay=33;go('daily')};document.querySelectorAll('.consecration-check').forEach(el=>el.addEventListener('change',()=>{saved.consecrationChecks=saved.consecrationChecks||{};saved.consecrationChecks[el.dataset.check]=el.checked;persist()}));$('save-consecration').addEventListener('click',()=>{saved.consecrationDate=$('actual-consecration-date').value||null;persist();$('consecration-confirmation').textContent=saved.consecrationDate?'Recorded: '+saved.consecrationDate:'Consecration date cleared.'});const originalLesson=$('daily-lesson').innerHTML;
+function renderFeasts(){$('feast-list').innerHTML=upcoming.map(f=>`<button class="feast ${f.id===selected.id?'selected':''}" data-feast="${f.id}"><span><strong>${f.name}</strong><small>Begin ${format(f.start)}</small></span><span class="subtle">${format(f.end)} ${f.id===selected.id?'✓':''}</span></button>`).join('');document.querySelectorAll('[data-feast]').forEach(b=>b.onclick=()=>{selected=upcoming.find(f=>f.id===b.dataset.feast);renderFeasts()});$('start-date').textContent=format(selected.start);$('end-date').textContent=format(selected.end)}$('save-plan').onclick=()=>{if(saved.plan!==selected.id){const hasProgress=done.size>0||Object.values(saved.journals||{}).some(v=>typeof v==='string'&&v.trim())||!!saved.consecrationDate||Object.values(saved.consecrationChecks||{}).some(Boolean);if(hasProgress&&!window.confirm('Changing your consecration feast will erase your completed days, journal entries, and consecration record on this device. Continue?'))return;done.clear();saved.consecrationChecks={};saved.journals={};saved.journal='';saved.viewDay=1;saved.consecrationDate=null;$('journal').value=''}saved.plan=selected.id;persist();go('journey')};function renderJourney(){const f=upcoming.find(x=>x.id===saved.plan)||selected;let count=done.size;let next=Array.from({length:33},(_,i)=>i+1).find(n=>!done.has(n))||33;$('journey-feast').textContent=`${f.name} · ${format(f.end)}`;$('progress-title').textContent=`Day ${next} of 33`;$('progress-fill').style.width=(count/33*100)+'%';$('progress-sub').textContent=`${count} of 33 days completed`;$('day-grid').innerHTML=Array.from({length:33},(_,i)=>`<button class="day ${done.has(i+1)?'done':''} ${i+1===next?'current':''}" data-day="${i+1}" title="Day ${i+1}">${done.has(i+1)?'✓':i+1}</button>`).join('')+`<button class="day consecration-day" id="day-34" type="button" title="Consecration · ${format(f.end)}" aria-label="Day 34, Act of Consecration, ${format(f.end)}"><strong>34</strong><small>${f.end.toLocaleDateString('en-US',{month:'short',day:'numeric'})}</small></button>`;document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{saved.viewDay=Number(b.dataset.day);go('daily')});$('day-34').onclick=()=>go('consecration')}function renderConsecration(){const f=upcoming.find(x=>x.id===saved.plan)||selected;$('consecration-feast-label').textContent=f.name+' · '+format(f.end);$('consecration-date-heading').textContent='Consecration · '+format(f.end);$('actual-consecration-date').value=saved.consecrationDate||'';document.querySelectorAll('.consecration-check').forEach(el=>el.checked=!!(saved.consecrationChecks||{})[el.dataset.check]);$('consecration-confirmation').textContent=saved.consecrationDate?'Recorded: '+saved.consecrationDate:'';}$('back-to-day-33').onclick=()=>{saved.viewDay=33;go('daily')};document.querySelectorAll('.consecration-check').forEach(el=>el.addEventListener('change',()=>{saved.consecrationChecks=saved.consecrationChecks||{};saved.consecrationChecks[el.dataset.check]=el.checked;persist()}));$('save-consecration').addEventListener('click',()=>{saved.consecrationDate=$('actual-consecration-date').value||null;persist();$('consecration-confirmation').textContent=saved.consecrationDate?'Recorded: '+saved.consecrationDate:'Consecration date cleared.'});const originalLesson=$('daily-lesson').innerHTML;
 const originalMeditation=$('meditation-questions').innerHTML;
 const VERIFIED_READINGS={
 13:'Luke 11:1–10',
@@ -685,15 +643,4 @@ if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.
   });
 }
 </script>
-
-<div id="tt-feast-confirm" class="tt-dialog-backdrop" hidden>
-  <section class="tt-dialog" role="alertdialog" aria-modal="true" aria-labelledby="tt-confirm-title" aria-describedby="tt-confirm-description">
-    <h2 id="tt-confirm-title">Change Consecration Feast?</h2>
-    <p id="tt-confirm-description">Changing your consecration feast will erase your completed days, journal entries, and consecration record on this device. This cannot be undone.</p>
-    <div class="tt-dialog-actions">
-      <button type="button" id="tt-cancel-change">Cancel</button>
-      <button type="button" id="tt-confirm-change">Erase &amp; Continue</button>
-    </div>
-  </section>
-</div>
 </body></html>
