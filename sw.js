@@ -1,4 +1,4 @@
-/* Totus Tuus v10.13 — network-first page navigations, offline fallback. */
+/* Totus Tuus v10.15 — network-first page navigations, offline fallback. */
 const CACHE = 'totus-tuus-v10-13';
 const ASSETS = ['./index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 self.addEventListener('install', event => {

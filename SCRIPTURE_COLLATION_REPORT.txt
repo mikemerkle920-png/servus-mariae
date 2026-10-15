@@ -1,0 +1,22 @@
+TOTUS TUUS v10.16 — SCRIPTURE COLLATION REPORT
+Reference: user-uploaded Project Gutenberg #1581, Douay-Rheims Bible, Challoner revision.
+Compared 11 Scripture-bearing daily readings: 1, 2, 3, 13, 15, 17, 18, 19, 20, 28, 30.
+
+METHOD: Compared ordered verse text, excluding Challoner explanatory annotations; separated Scripture from nonbiblical devotional excerpts. Normalized punctuation and whitespace to identify lexical differences.
+
+FINDINGS:
+Day 1 Matthew 5:9: add 'the' before 'children of God'. Matthew 5:10: reference prints 'justice’ sake' rather than 'justice’s sake'. Matthew 5:13 'anymore' versus 'any more'; Matthew 5:17 'fulfil' versus 'fulfill'.
+Day 2: Scripture word-for-word matched after excluding Bible commentary and treating 'almsdeed' versus 'alms deed' as a spacing difference; unchanged.
+Day 3 Matthew 7:5: reference reads 'cast out first the beam out of thy own eye'; app had 'in thy own eye'. Corrected.
+Day 13: exact normalized word match; unchanged.
+Day 15: exact normalized word match; unchanged.
+Day 17: exact normalized word match; unchanged.
+Day 18: exact normalized word match after excluding Challoner note; unchanged.
+Day 19 Luke 18:29: reference reads 'left home or parents'; app read 'left house, or parents'. Corrected 'house' to 'home'; punctuation retained.
+Day 20: exact normalized word match; unchanged.
+Day 28 Matthew 26:45: reference reads 'and said to them', app had 'and saith to them'; corrected. Minor punctuation in verses 45–46 aligned.
+Day 30: exact normalized word match; unchanged.
+
+Important: Challoner notes embedded in Gutenberg are commentary, not biblical verses, and are intentionally not copied into the app. This comparison does not certify devotional readings, prayer sources, UI or device behavior.
+
+Source text and existing approved prayers are otherwise unchanged.

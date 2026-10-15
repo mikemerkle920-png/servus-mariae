@@ -1,0 +1,12 @@
+TOTUS TUUS — v10.15 SOURCE-NOTES RELEASE CANDIDATE
+Source: v10.14 editorial corrections.
+
+Changes: Added reading-note entries for Days 31, 32, 33 to distinguish Faber selected excerpts and internal abridgments. Existing note for Day 25 already identifies selected portions.
+
+Scripture inventory (11 days): 1 Matt 5:1-19; 2 Matt 5:48 and 6:1-15; 3 Matt 7:1-14; 13 Luke 11:1-10; 15 Luke 13:1-5; 17 Luke 16:1-8; 18 Luke 17:1-10; 19 Luke 18:15-30; 20 Luke 2:16-21 and 41-51; 28 Matt 26:1,26-29,36-46; 30 Matt 27:36-44.
+
+Comparison source: Project Gutenberg #1582 (Douay-Rheims Challoner New Testament).
+
+Verification limits: This pass inventories the exact passages and source labels. It DOES NOT establish completed verse-by-verse collation. No Scripture or prayer text changed. The approved traditional Litany of Loretto is unchanged.
+
+Release gates: full verse-by-verse source comparison; visual/functional Android and iOS tests; offline cache and Day 34 signature/progress checks. Do not treat this package as final release certification.
