@@ -1,0 +1,1 @@
+v10.17.2: Retains v10.17.1 feast-day initialization fix; adds functional Contact Developer mailto link and updates cache ID. Progress/journal remain test data. Browser/device verification pending.
