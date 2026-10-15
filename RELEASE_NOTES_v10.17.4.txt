@@ -1,0 +1,1 @@
+Fixes prayer display for Days 13–33: an undefined MARY_PRAYER_TEXT constant caused daily rendering to abort before selecting the correct prayer card. Preserves traditional prayer texts unchanged. The Prayer to Mary entry needs separate source verification and is not introduced by this hotfix.

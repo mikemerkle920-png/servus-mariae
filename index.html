@@ -657,10 +657,10 @@ if(!secondAve){
 const secondIntro=second.querySelector('.subtle');
 if(false&&secondIntro)secondIntro.textContent=n>=20&&n<=26?'Knowledge of Mary: Litany of the Holy Spirit, Ave Maris Stella, Litany of Loreto, Prayer to Mary, and five decades of the Rosary. The complete Prayer to Mary is provided below.':'Knowledge of Self: Litany of the Holy Spirit, Ave Maris Stella, and Litany of Loreto.';
 // Keep the Marian prayer visible in its proper phase without substituting an unapproved translation.
-let maryNote=second.querySelector('#mary-prayer-reference');
-if(!maryNote){maryNote=document.createElement('details');maryNote.id='mary-prayer-reference';maryNote.className='prayer-fold';second.appendChild(maryNote)}
-maryNote.innerHTML='<summary><strong>Prayer to Mary — St. Louis-Marie de Montfort</strong><small>Complete English prayer</small></summary><div class="prayer-body"><p class="subtle">St. Louis de Montfort, <em>The Secret of Mary</em>, §68</p>'+MARY_PRAYER_TEXT.split('\n\n').map(p=>'<p>'+safe(p)+'</p>').join('')+'</div>';
-maryNote.style.display=n>=20&&n<=26?'':'none';
+// Avoid a missing prayer-text constant interrupting the entire daily renderer.
+// The Prayer to Mary source requires separate verification before reintroduction.
+const oldMaryNote=second.querySelector('#mary-prayer-reference');
+if(oldMaryNote)oldMaryNote.remove();
 if(n>=27&&n<=33){
  const dest=$('fourth-prayer-content');dest.replaceChildren();
  const holySpirit=$('second-period-prayers').querySelector('details.prayer-fold');
