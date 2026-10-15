@@ -1,0 +1,18 @@
+Totus Tuus v10.17 — User review revisions
+
+Based on v10.16; original approved prayers, including traditional Litany of Loretto, retained.
+
+- New approved Marian/Child Jesus banner and Option A welcome layout.
+- Daily left/right swipes navigate previous/next day (Day 33 advances to consecration).
+- Removed duplicate embedded Scripture headings and visible daily source citations.
+- Removed supplementary reflections, meditation questions, and introductory purpose cards from the rendered daily view; historical readings and prayers are primary.
+- Added six Marian feast dates; increased upcoming feast selection horizon from 14 to 20 results.
+- Removed two user-specified notices.
+- Prayer section headings normalized to the applicable period; introductory explanatory text hidden.
+- Reading source headings for mixed readings; separated Day 14, 16, 17 and other mixed-source days.
+- Day 4 replaced with Benham Book III chapter 40 paragraphs 3–5, checked against Gutenberg #1653.
+- Day 3 extended from Matthew 7:1–14 to 7:1–20 using user-supplied Gutenberg #1581.
+- Settings for font size, dark mode, sharing and references. Contact developer placeholder until contact information supplied.
+- Service worker cache version incremented and Marian art cached for offline use.
+
+Validation: JavaScript syntax, ZIP integrity, 33 complete reading records, source text preservation checks and app asset checks. Physical iOS/Android acceptance remains necessary.
