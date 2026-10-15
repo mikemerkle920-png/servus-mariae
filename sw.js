@@ -1,5 +1,5 @@
-/* Totus Tuus v10.17.2 — network-first page navigations, offline fallback. */
-const CACHE = 'totus-tuus-v10-17-2';
+/* Totus Tuus v10.17.3 — network-first page navigations, offline fallback. */
+const CACHE = 'totus-tuus-v10-17-3';
 const ASSETS = ['./index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './marian-welcome.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));

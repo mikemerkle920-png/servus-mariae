@@ -421,7 +421,7 @@ Esurientes implevit bonis: et divites dimisit inanes.
 Suscepit Israel puerum suum, recordatus misericordiae suae.
 Sicut locutus est ad patres nostros, Abraham et semini eius in saecula.</div></details></div></details><details class="prayer-fold"><summary><strong>Gloria Patri</strong><small>Glory Be</small></summary><div class="prayer-body"><div class="subtle">English</div><div class="prayer">Glory be to the Father, and to the Son, and to the Holy Ghost. As it was in the beginning, is now, and ever shall be, world without end. Amen.</div><details class="latin"><summary>Show traditional Latin text</summary><div class="prayer">Gloria Patri, et Filio, et Spiritui Sancto.
 Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen.</div></details></div></details></div>
-<div class="card" id="meditation-card"><div class="eyebrow">Quiet meditation · Original</div><h3>Consider today</h3><div id="meditation-questions"><p>1. Where do I seek the approval of others more readily than the approval of God?</p><p>2. Which Beatitude most challenges my current way of living?</p><p>3. What one small act of humility, mercy, or self-denial can I offer today?</p></div><label class="subtle" for="journal">Private reflection (stored only on this device)</label><textarea id="journal" placeholder="Write a personal reflection, if you wish…"></textarea></div>
+<div class="card" id="meditation-card"><div class="eyebrow">Personal reflection</div><h3>Two questions for today</h3><div id="meditation-questions"><p>1. Where do I seek the approval of others more readily than the approval of God?</p><p>2. Which Beatitude most challenges my current way of living?</p><p>3. What one small act of humility, mercy, or self-denial can I offer today?</p></div><label class="subtle" for="journal">Private reflection (stored only on this device)</label><textarea id="journal" placeholder="Write a personal reflection, if you wish…"></textarea></div>
 <div id="day-controls"><button class="secondary" id="prev-day" type="button">← Previous day</button><button class="secondary" id="next-day" type="button">Next day →</button></div><label class="toggle"><span>Mark today's preparation complete</span><input id="done-toggle" type="checkbox"/></label><button class="primary" data-go="journey">Return to My Journey →</button></section>
 </main><div class="swipe-hint">← Swipe left or right to move between tabs →</div><footer>Totus Tuus · A free, ad-free devotional companion</footer></div><div id="tt-feast-confirm" class="tt-dialog-backdrop" hidden>
   <section class="tt-dialog" role="alertdialog" aria-modal="true" aria-labelledby="tt-confirm-title" aria-describedby="tt-confirm-description">
@@ -640,7 +640,13 @@ if(lesson && VERIFIED_READINGS[n]){lesson.reference=VERIFIED_READINGS[n];lesson.
 $('day-title').textContent=n===1?'Day 1 — Renouncing the Spirit of the World':lesson?`Day ${n} — ${lesson.title}`:`Day ${n} — Content in development`;
 $('done-toggle').checked=done.has(n);
 $('daily-lesson').innerHTML=readingPanel(n, n===3?'Matthew 7:1–20':n===4?'Thomas à Kempis, The Imitation of Christ, Book III, chapter 40, paragraphs 3–5':lesson?.reference||'Traditional reading');
-$('meditation-questions').innerHTML='';
+const dailyQuestions = Array.isArray(lesson?.questions) ? lesson.questions.slice(0,2) : [];
+$('meditation-questions').replaceChildren();
+dailyQuestions.forEach((question, i) => {
+ const item = document.createElement('p');
+ item.textContent = `${i+1}. ${question}`;
+ $('meditation-questions').appendChild(item);
+});
 // For the second and third periods, retain the two litanies and include Ave Maris Stella.
 const second=$('second-period-prayers');
 let secondAve=second.querySelector('#second-ave');
@@ -667,7 +673,7 @@ $('shared-prayers').style.display=n<=12?'':'none';
 $('second-period-prayers').style.display=n>=13&&n<=26?'':'none';
 
 $('fourth-period-prayers').style.display=n>=27&&n<=33?'':'none';
-$('meditation-card').style.display='none';
+$('meditation-card').style.display='';
 $('done-toggle').parentElement.style.display=n<=33?'':'none';
 
 $('journal').value=(saved.journals||{})[n]|| (n===1&&!saved.journals?saved.journal||'':'');
