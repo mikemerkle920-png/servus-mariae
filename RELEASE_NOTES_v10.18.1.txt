@@ -1,0 +1,9 @@
+Servus Mariae v10.18.1
+- Audio playback: range-aware service worker for saved recordings; actionable playback errors. Ensure entire audio/ directory is deployed.
+- Day 1 two reflection questions restored.
+- Feast date fields shown above and below list, synchronized.
+- Rebranded header, image, sharing and feedback email.
+- Day 28 duplicate introductory verse removed; citation corrected to Matthew 26:26–29, 36–46.
+- Day 5: Benham translation of Imitation of Christ III.14; supplied replacement MP3 installed.
+- Existing user progress stored under tt-v01 key is preserved.
+- Device playback and offline behavior must still be tested after GitHub Pages deployment.
