@@ -1,0 +1,330 @@
+[
+  {
+    "day": 1,
+    "reading": 1,
+    "title": "Matthew 5:1–19",
+    "audio": "audio/day01_reading01.mp3",
+    "script": "Individual_Scripts/day01_reading01.txt",
+    "wordCount": 364
+  },
+  {
+    "day": 2,
+    "reading": 1,
+    "title": "Matthew 5:48; 6:1–15",
+    "audio": "audio/day02_reading01.mp3",
+    "script": "Individual_Scripts/day02_reading01.txt",
+    "wordCount": 320
+  },
+  {
+    "day": 3,
+    "reading": 1,
+    "title": "Matthew 7:1–20",
+    "audio": "audio/day03_reading01.mp3",
+    "script": "Individual_Scripts/day03_reading01.txt",
+    "wordCount": 415
+  },
+  {
+    "day": 4,
+    "reading": 1,
+    "title": "The Imitation of Christ — III.40, §§3–5",
+    "audio": "audio/day04_reading01.mp3",
+    "script": "Individual_Scripts/day04_reading01.txt",
+    "wordCount": 270
+  },
+  {
+    "day": 5,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day05_reading01.mp3",
+    "script": "Individual_Scripts/day05_reading01.txt",
+    "wordCount": 112
+  },
+  {
+    "day": 6,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day06_reading01.mp3",
+    "script": "Individual_Scripts/day06_reading01.txt",
+    "wordCount": 319
+  },
+  {
+    "day": 7,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day07_reading01.mp3",
+    "script": "Individual_Scripts/day07_reading01.txt",
+    "wordCount": 251
+  },
+  {
+    "day": 8,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day08_reading01.mp3",
+    "script": "Individual_Scripts/day08_reading01.txt",
+    "wordCount": 327
+  },
+  {
+    "day": 9,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day09_reading01.mp3",
+    "script": "Individual_Scripts/day09_reading01.txt",
+    "wordCount": 444
+  },
+  {
+    "day": 10,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day10_reading01.mp3",
+    "script": "Individual_Scripts/day10_reading01.txt",
+    "wordCount": 628
+  },
+  {
+    "day": 11,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day11_reading01.mp3",
+    "script": "Individual_Scripts/day11_reading01.txt",
+    "wordCount": 461
+  },
+  {
+    "day": 12,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day12_reading01.mp3",
+    "script": "Individual_Scripts/day12_reading01.txt",
+    "wordCount": 335
+  },
+  {
+    "day": 13,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day13_reading01.mp3",
+    "script": "Individual_Scripts/day13_reading01.txt",
+    "wordCount": 245
+  },
+  {
+    "day": 14,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day14_reading01.mp3",
+    "script": "Individual_Scripts/day14_reading01.txt",
+    "wordCount": 375
+  },
+  {
+    "day": 15,
+    "reading": 1,
+    "title": "Luke 13:1–5",
+    "audio": "audio/day15_reading01.mp3",
+    "script": "Individual_Scripts/day15_reading01.txt",
+    "wordCount": 106
+  },
+  {
+    "day": 15,
+    "reading": 2,
+    "title": "True Devotion — §§81–82",
+    "audio": "audio/day15_reading02.mp3",
+    "script": "Individual_Scripts/day15_reading02.txt",
+    "wordCount": 395
+  },
+  {
+    "day": 16,
+    "reading": 1,
+    "title": "True Devotion — §228",
+    "audio": "audio/day16_reading01.mp3",
+    "script": "Individual_Scripts/day16_reading01.txt",
+    "wordCount": 155
+  },
+  {
+    "day": 16,
+    "reading": 2,
+    "title": "The Imitation of Christ — II.5",
+    "audio": "audio/day16_reading02.mp3",
+    "script": "Individual_Scripts/day16_reading02.txt",
+    "wordCount": 324
+  },
+  {
+    "day": 17,
+    "reading": 1,
+    "title": "The Imitation of Christ — I.24",
+    "audio": "audio/day17_reading01.mp3",
+    "script": "Individual_Scripts/day17_reading01.txt",
+    "wordCount": 127
+  },
+  {
+    "day": 17,
+    "reading": 2,
+    "title": "Luke 16:1–8",
+    "audio": "audio/day17_reading02.mp3",
+    "script": "Individual_Scripts/day17_reading02.txt",
+    "wordCount": 214
+  },
+  {
+    "day": 18,
+    "reading": 1,
+    "title": "Luke 17:1–10",
+    "audio": "audio/day18_reading01.mp3",
+    "script": "Individual_Scripts/day18_reading01.txt",
+    "wordCount": 246
+  },
+  {
+    "day": 18,
+    "reading": 2,
+    "title": "The Imitation of Christ — III.47",
+    "audio": "audio/day18_reading02.mp3",
+    "script": "Individual_Scripts/day18_reading02.txt",
+    "wordCount": 95
+  },
+  {
+    "day": 19,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day19_reading01.mp3",
+    "script": "Individual_Scripts/day19_reading01.txt",
+    "wordCount": 322
+  },
+  {
+    "day": 20,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day20_reading01.mp3",
+    "script": "Individual_Scripts/day20_reading01.txt",
+    "wordCount": 328
+  },
+  {
+    "day": 21,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day21_reading01.mp3",
+    "script": "Individual_Scripts/day21_reading01.txt",
+    "wordCount": 598
+  },
+  {
+    "day": 22,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day22_reading01.mp3",
+    "script": "Individual_Scripts/day22_reading01.txt",
+    "wordCount": 649
+  },
+  {
+    "day": 23,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day23_reading01.mp3",
+    "script": "Individual_Scripts/day23_reading01.txt",
+    "wordCount": 344
+  },
+  {
+    "day": 24,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day24_reading01.mp3",
+    "script": "Individual_Scripts/day24_reading01.txt",
+    "wordCount": 455
+  },
+  {
+    "day": 25,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day25_reading01.mp3",
+    "script": "Individual_Scripts/day25_reading01.txt",
+    "wordCount": 649
+  },
+  {
+    "day": 26,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day26_reading01.mp3",
+    "script": "Individual_Scripts/day26_reading01.txt",
+    "wordCount": 476
+  },
+  {
+    "day": 27,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day27_reading01.mp3",
+    "script": "Individual_Scripts/day27_reading01.txt",
+    "wordCount": 495
+  },
+  {
+    "day": 28,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day28_reading01.mp3",
+    "script": "Individual_Scripts/day28_reading01.txt",
+    "wordCount": 364
+  },
+  {
+    "day": 29,
+    "reading": 1,
+    "title": "Daily reading",
+    "audio": "audio/day29_reading01.mp3",
+    "script": "Individual_Scripts/day29_reading01.txt",
+    "wordCount": 254
+  },
+  {
+    "day": 30,
+    "reading": 1,
+    "title": "Matthew 27:36–44",
+    "audio": "audio/day30_reading01.mp3",
+    "script": "Individual_Scripts/day30_reading01.txt",
+    "wordCount": 162
+  },
+  {
+    "day": 30,
+    "reading": 2,
+    "title": "The Imitation of Christ",
+    "audio": "audio/day30_reading02.mp3",
+    "script": "Individual_Scripts/day30_reading02.txt",
+    "wordCount": 177
+  },
+  {
+    "day": 31,
+    "reading": 1,
+    "title": "The Imitation of Christ",
+    "audio": "audio/day31_reading01.mp3",
+    "script": "Individual_Scripts/day31_reading01.txt",
+    "wordCount": 136
+  },
+  {
+    "day": 31,
+    "reading": 2,
+    "title": "True Devotion",
+    "audio": "audio/day31_reading02.mp3",
+    "script": "Individual_Scripts/day31_reading02.txt",
+    "wordCount": 440
+  },
+  {
+    "day": 32,
+    "reading": 1,
+    "title": "The Imitation of Christ",
+    "audio": "audio/day32_reading01.mp3",
+    "script": "Individual_Scripts/day32_reading01.txt",
+    "wordCount": 56
+  },
+  {
+    "day": 32,
+    "reading": 2,
+    "title": "True Devotion",
+    "audio": "audio/day32_reading02.mp3",
+    "script": "Individual_Scripts/day32_reading02.txt",
+    "wordCount": 481
+  },
+  {
+    "day": 33,
+    "reading": 1,
+    "title": "The Imitation of Christ",
+    "audio": "audio/day33_reading01.mp3",
+    "script": "Individual_Scripts/day33_reading01.txt",
+    "wordCount": 130
+  },
+  {
+    "day": 33,
+    "reading": 2,
+    "title": "True Devotion",
+    "audio": "audio/day33_reading02.mp3",
+    "script": "Individual_Scripts/day33_reading02.txt",
+    "wordCount": 398
+  }
+]

@@ -1,0 +1,5 @@
+Servus Mariae audio pilot release
+41 MP3 recordings mapped to Days 1–33. Play/pause, seek, save offline per recording. No speed control.
+IMPORTANT: Day 5 recording was generated from duplicated text in the original app and needs replacement after the authentic revised Day 5 text is approved and narrated.
+Audio is only cached on request; browser may evict cached data. GitHub Pages storage/bandwidth limits should be considered.
+Existing journal and completion storage logic unchanged.
