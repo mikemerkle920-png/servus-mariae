@@ -24,7 +24,7 @@
 #tt-confirm-change{background:var(--navy);border:2px solid var(--navy);color:white}
 .tt-dialog-actions button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-.hero-art{background:#173c58 url('./marian-welcome.png?v=10181') center/cover no-repeat;min-height:0;aspect-ratio:2.14/1;padding:0;}
+.hero-art{background:#173c58 url('./marian-welcome.png?v=10181') center/cover no-repeat;min-height:0;aspect-ratio:1.712/1;padding:0;}
 .welcome-intro{text-align:center;padding:14px 5px 0}.welcome-intro h2{font-weight:700;font-size:clamp(19px,4.6vw,24px);line-height:1.25;color:var(--navy);margin:7px 0 9px}.welcome-intro p:not(.subtle){font-size:16px;color:var(--navy)}.welcome-intro .subtle{margin-top:18px}
 .nav button:last-child{flex:0 0 34px;font-size:17px}
 #second-period-prayers>h3,#second-period-prayers>p.subtle,#fourth-period-prayers>h3,#fourth-period-prayers>p.subtle{display:none!important}
@@ -47,7 +47,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
 </head><body><div class="app"><header class="top"><span class="brand">✠ Servus Mariae</span><small>AD JESUM PER MARIAM</small></header><nav class="nav"><button class="active" data-go="welcome">Welcome</button><button data-go="feasts">Feast Days</button><button data-go="journey">My Journey</button><button data-go="daily">Today's Prayer</button><button data-go="settings" aria-label="Settings">⚙</button></nav><main>
-<section class="screen active" id="welcome"><div class="hero hero-art" role="img" aria-label="The Blessed Virgin Mary with the Child Jesus, Servus Mariae — Ad Jesum per Mariam"></div><div class="welcome-intro"><h2>33 Days of Preparation for Total Consecration to Jesus through Mary</h2><p>According to St. Louis de Montfort</p><p class="subtle">Free forever · No ads · No account required</p></div><button class="primary welcome-cta" data-go="feasts">Choose My Consecration Day →</button></section>
+<section class="screen active" id="welcome"><div class="hero hero-art" role="img" aria-label="The Blessed Virgin Mary with the Child Jesus, Servus Mariae — Ad Jesum per Mariam"></div><div class="welcome-intro"><h2>33 Days of Preparation for Total Consecration to Jesus through Mary</h2><p>According to St. Louis de Montfort</p></div><button class="primary welcome-cta" data-go="feasts">Choose My Consecration Day →</button></section>
 <section class="screen" id="feasts"><div class="eyebrow">Begin with the destination</div><h2>Choose a Marian feast</h2><p class="subtle">Your preparation begins 33 days before your chosen feast. Day 34 is your act of consecration.</p><div class="card feast-date-preview"><div class="datebox"><div><span class="subtle">Begin preparation</span><strong id="start-date-top">—</strong></div><div><span class="subtle">Consecration</span><strong id="end-date-top">—</strong></div></div><button class="primary" id="save-plan-top" type="button">Begin This Journey →</button></div><div id="feast-list"></div><div class="card"><div class="datebox"><div><span class="subtle">Begin preparation</span><strong id="start-date">—</strong></div><div><span class="subtle">Consecration</span><strong id="end-date">—</strong></div></div><button class="primary" id="save-plan">Begin This Journey →</button></div></section>
 
 
@@ -432,7 +432,7 @@ Sicut locutus est ad patres nostros, Abraham et semini eius in saecula.</div></d
 Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen.</div></details></div></details></div>
 <div class="card" id="meditation-card"><div class="eyebrow">Personal reflection</div><h3>Two questions for today</h3><div id="meditation-questions"><p>1. Where do I seek the approval of others more readily than the approval of God?</p><p>2. Which Beatitude most challenges my current way of living?</p><p>3. What one small act of humility, mercy, or self-denial can I offer today?</p></div><label class="subtle" for="journal">Private reflection (stored only on this device)</label><textarea id="journal" placeholder="Write a personal reflection, if you wish…"></textarea></div>
 <div id="day-controls"><button class="secondary" id="prev-day" type="button">← Previous day</button><button class="secondary" id="next-day" type="button">Next day →</button></div><label class="toggle"><span>Mark today's preparation complete</span><input id="done-toggle" type="checkbox"/></label><button class="primary" data-go="journey">Return to My Journey →</button></section>
-</main><div class="swipe-hint">← Swipe left or right to move between tabs →</div><footer>Servus Mariae · A free, ad-free devotional companion</footer></div><div id="tt-feast-confirm" class="tt-dialog-backdrop" hidden>
+</main><div class="swipe-hint">← Swipe left or right to move between tabs →</div><footer>Free forever · No ads · No account required</footer></div><div id="tt-feast-confirm" class="tt-dialog-backdrop" hidden>
   <section class="tt-dialog" role="alertdialog" aria-modal="true" aria-labelledby="tt-confirm-title" aria-describedby="tt-confirm-description">
     <h2 id="tt-confirm-title">Change Consecration Feast?</h2>
     <p id="tt-confirm-description">Changing your consecration feast will erase your completed days, journal entries, and consecration record on this device. This cannot be undone.</p>
